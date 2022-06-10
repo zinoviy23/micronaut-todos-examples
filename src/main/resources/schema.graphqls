@@ -1,0 +1,24 @@
+type Query {
+    toDos: [ToDo!]!
+}
+
+type Mutation {
+    createToDo(title: String!, author: String!): ToDo
+    completeToDo(id: ID!): Boolean!
+}
+
+type Subscription {
+    newToDos(author: String!): ToDo
+}
+
+type ToDo {
+    id: ID!
+    title: String!
+    completed: Boolean!
+    author: Author!
+}
+
+type Author {
+    id: ID!
+    username: String!
+}

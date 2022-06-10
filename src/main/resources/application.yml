@@ -1,0 +1,24 @@
+micronaut:
+  application:
+    name: micronautGraphql
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/todo
+    driverClassName: org.postgresql.Driver
+    schema-generate: CREATE_DROP
+    dialect: POSTGRES
+flyway:
+  datasources:
+    default:
+      enabled: true
+netty:
+  default:
+    allocator:
+      max-order: 3
+graphql:
+  graphql-ws:
+    enabled: true
+    path: /graphql-ws
+    keep-alive-interval: 15s
+  graphiql:
+    enabled: true
